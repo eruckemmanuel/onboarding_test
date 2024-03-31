@@ -17,6 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from training import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/activity', views.UserActivityLogAPIView.as_view()),
+    path('', views.index, name='index')
 ]
